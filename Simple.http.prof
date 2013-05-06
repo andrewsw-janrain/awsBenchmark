@@ -1,0 +1,44 @@
+	Mon May  6 15:08 2013 Time and Allocation Profiling Report  (Final)
+
+	   Simple +RTS -prof -RTS http://www.google.com
+
+	total time  =        0.01 secs   (7 ticks @ 1000 us, 1 processor)
+	total alloc =   1,190,488 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE           %time %alloc
+
+main.\      Simple            85.7   74.5
+showsPrec   Simple            14.3   12.4
+CAF         GHC.IO.Handle.FD   0.0    2.9
+CAF         GHC.Float          0.0    3.9
+main        Simple             0.0    4.1
+
+
+                                                                      individual     inherited
+COST CENTRE         MODULE                          no.     entries  %time %alloc   %time %alloc
+
+MAIN                MAIN                            285           0    0.0    0.0   100.0  100.0
+ main               Simple                          572           0    0.0    0.0     0.0    0.1
+  main.\            Simple                          573           0    0.0    0.1     0.0    0.1
+ CAF                Simple                          569           0    0.0    0.2   100.0   91.2
+  main              Simple                          570           1    0.0    4.0   100.0   91.1
+   main.\           Simple                          571           1   85.7   74.4   100.0   87.0
+    diffGCStats     Simple                          576           2    0.0    0.2     0.0    0.2
+    showsPrec       Simple                          575           2   14.3   12.4    14.3   12.4
+    unstream/resize Data.Text.Fusion                574           4    0.0    0.1     0.0    0.1
+ CAF                Network.HTTP.Conduit.Request    565           0    0.0    0.6     0.0    0.6
+ CAF                Network.HTTP.Conduit.Util       564           0    0.0    0.0     0.0    0.0
+ CAF                Network.HTTP.Conduit.Response   561           0    0.0    0.4     0.0    0.4
+ CAF                Network.HTTP.Conduit.Parser     558           0    0.0    0.1     0.0    0.1
+ CAF                Network.URI                     502           0    0.0    0.3     0.0    0.3
+ CAF                Data.Conduit.Blaze              450           0    0.0    0.0     0.0    0.0
+ CAF                GHC.Float                       341           0    0.0    3.9     0.0    3.9
+ CAF                GHC.IO.Encoding                 339           0    0.0    0.3     0.0    0.3
+ CAF                GHC.IO.Handle.FD                336           0    0.0    2.9     0.0    2.9
+ CAF                Data.Unique                     324           0    0.0    0.0     0.0    0.0
+ CAF                GHC.Conc.Signal                 316           0    0.0    0.1     0.0    0.1
+ CAF                GHC.IO.Encoding.Iconv           314           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.FD                       313           0    0.0    0.0     0.0    0.0
+ CAF                System.Timeout                  308           0    0.0    0.0     0.0    0.0
+  main              Simple                          577           0    0.0    0.0     0.0    0.0
+   main.\           Simple                          578           0    0.0    0.0     0.0    0.0
